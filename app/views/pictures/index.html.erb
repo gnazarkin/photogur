@@ -2,6 +2,13 @@
 
 <%= link_to 'Add new picture', new_picture_path %>
 
+<h1>Most recent pcitures</h1>
+<ul>
+	<% @most_recent_pictures.each do |picture| %>
+		<li><%= picture.title %></li>
+	<% end %> 
+</ul>
+
 <% @pictures.each do |picture| %>
 	<p><%= picture[:title] %>, <%= picture[:artist] %></p>
 	<img src="<%= picture[:url] %>">
